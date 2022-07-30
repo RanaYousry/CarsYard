@@ -1,0 +1,363 @@
+<!-- Second header -->
+<mat-toolbar class="header-second">
+  <div class="title">Results Page</div>
+  <span class="spacer"></span>
+  <button
+    type="button"
+    class="button-add"
+    data-toggle="modal"
+    data-target="#addCar"
+  >
+    <i class="fa fa-plus"></i> add car
+  </button>
+</mat-toolbar>
+<!-- Modal of adding new car -->
+<div
+  class="modal fade"
+  id="addCar"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="ModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div
+      class="modal-content"
+      style="
+        width: 690px;
+        height: 499px;
+        justify-content: center;
+        border-radius: 15px;
+      "
+    >
+      <div class="row" style="padding: 33px 35px 30px 35px">
+        <div class="col-10">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">Dashboard</li>
+              <li class="breadcrumb-item active">cars</li>
+            </ol>
+          </nav>
+          <h5 id="ModalLabel" class="modal-title">Add Car</h5>
+        </div>
+        <div class="col-2">
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="fa fa-circle-xmark"></i>
+          </button>
+        </div>
+      </div>
+      <form>
+        <div class="row" style="padding: 0px 0px 40px 35px">
+          <div class="col">
+            <div class="form-group">
+              <label for="formGroup" class="car-label">Car Name</label>
+              <input
+                required
+                type="text"
+                class="form-control car-field"
+                id="formGroup"
+                placeholder="Name"
+              />
+            </div>
+          </div>
+          <div class="col" style="padding: 0px 35px 0px 39px">
+            <div class="form-group">
+              <label for="formGroup" class="car-label">Daily Rate</label>
+              <input
+                required
+                type="number"
+                class="form-control car-field"
+                id="formGroup"
+                placeholder="25.00"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row" style="padding: 0px 0px 40px 35px">
+          <div class="col">
+            <div class="form-group">
+              <label for="formGroup" class="car-label">Car Photo</label>
+              <input
+                required
+                type="file"
+                class="form-control-file"
+                id="formGroup"
+              />
+            </div>
+          </div>
+          <div class="col" style="padding: 0px 35px 0px 39px">
+            <div class="form-group">
+              <label for="formGroup" class="car-label">City</label>
+              <select required id="formGroup" class="form-control car-field">
+                <option selected>Choose...</option>
+                <option>Alexandria</option>
+                <option>Cairo</option>
+                <option>Hurghada</option>
+                <option>Giza</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="padding: 0px 35px 0px 39px">
+          <div class="col">
+            <label class="car-label">Transmission</label>
+          </div>
+          <div class="col">
+            <label class="car-label">Air Conditioning</label>
+          </div>
+        </div>
+        <div class="row" style="padding: 0px 0px 40px 35px">
+          <div class="col">
+            <div class="form-check form-check-inline">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="formGroup"
+                value="option1"
+              />
+              <label class="form-check-label" for="formGroup">Manual</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="formGroup"
+                value="option2"
+              />
+              <label class="form-check-label" for="formGroup">Automatic</label>
+            </div>
+          </div>
+
+          <div class="col" style="padding: 0px 35px 0px 39px">
+            <div class="form-check form-check-inline">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio1"
+                value="option1"
+              />
+              <label class="form-check-label" for="inlineRadio1">yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="inlineRadio2"
+                value="option2"
+              />
+              <label class="form-check-label" for="inlineRadio2">no</label>
+            </div>
+          </div>
+        </div>
+        <button (click)="onAddCar()" type="button" class="btn btn-modal">
+          Save changes
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- //////////////////////////////// -->
+<!-- The Content of the page -->
+<div class="container-fluid" style="padding-top: 40px; padding-left: 31px">
+  <div class="row">
+    <div class="col-3">
+      <p class="h3">Reset All</p>
+      <form>
+        <div class="row">
+          <div class="col-10">
+            <p class="h2">Average Day Rate</p>
+          </div>
+          <div class="col-2">
+            <a
+              data-toggle="collapse"
+              data-target="#rate"
+              aria-expanded="true"
+              aria-controls="rate"
+            >
+              <i class="fa fa-angle-down"></i>
+            </a>
+          </div>
+        </div>
+        <div class="row pb-4">
+          <div class="collapse show" id="rate">
+            <div class="form-group">
+              <label for="rateRange">usd 20,00</label>
+              <br />
+              <input type="range" class="form-control-range" id="rateRange" />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <p class="h2">Air Conditioning</p>
+          </div>
+          <div class="col-2">
+            <a
+              data-toggle="collapse"
+              data-target="#checkAC"
+              aria-expanded="true"
+              aria-controls="checkAC"
+            >
+              <i class="fa fa-angle-down"></i>
+            </a>
+          </div>
+        </div>
+        <div class="row pb-4">
+          <div class="collapse show" id="checkAC">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="formGroup"
+                value="option1"
+              />
+              <label class="form-check-label" for="formGroup">Yes</label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="formGroup"
+                value="option2"
+              />
+              <label class="form-check-label" for="formGroup">No</label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <p class="h2">City</p>
+          </div>
+          <div class="col-2">
+            <a
+              data-toggle="collapse"
+              data-target="#checkCity"
+              aria-expanded="true"
+              aria-controls="checkCity"
+            >
+              <i class="fa fa-angle-down"></i>
+            </a>
+          </div>
+        </div>
+        <div class="row pb-4">
+          <div class="collapse show" id="checkCity">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="city1"
+              />
+              <label class="form-check-label" for="city1"> Alexandria </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="city2"
+              />
+              <label class="form-check-label" for="city2"> Cairo </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="city3"
+              />
+              <label class="form-check-label" for="city3"> Hurghada </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="city4"
+              />
+              <label class="form-check-label" for="city4"> Giza </label>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-10">
+            <p class="h2">Shift Type</p>
+          </div>
+          <div class="col-2">
+            <a
+              data-toggle="collapse"
+              data-target="#shiftType"
+              aria-expanded="true"
+              aria-controls="shiftType"
+            >
+              <i class="fa fa-angle-down"></i>
+            </a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="collapse show" id="shiftType">
+            <div class="form-check">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="formGroup"
+                value="option1"
+              />
+              <label class="form-check-label" for="formGroup">Manual</label>
+            </div>
+            <div class="form-check">
+              <input
+                required
+                class="form-check-input"
+                type="radio"
+                name="inlineRadioOptions"
+                id="formGroup"
+                value="option2"
+              />
+              <label class="form-check-label" for="formGroup">Automatic</label>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-9">
+      <div class="btn-group dropdown">
+        <button class="btn" type="button">Sort By</button>
+        <button
+          type="button"
+          class="btn dropdown-toggle dropdown-toggle-split"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Price</span>
+        </button>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="#">Price (high to low)</a>
+          <a class="dropdown-item" href="#">Price (low to high)</a>
+          <a class="dropdown-item" href="#">A-Z</a>
+        </div>
+      </div>
+      <br />
+      <app-cars-card></app-cars-card>
+    </div>
+  </div>
+</div>

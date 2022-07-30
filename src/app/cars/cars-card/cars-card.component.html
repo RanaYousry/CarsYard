@@ -1,0 +1,60 @@
+<div
+  class="card"
+  style="
+    box-shadow: 0px 0px 6px #00000019;
+    border-radius: 2px;
+    width: 1000px;
+    height: 175px;
+    margin-bottom: 24px;
+  "
+  *ngFor="let car of cars"
+>
+  <div class="row">
+    <div class="col-9 left-style">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col">
+            <img
+              style="width: 117px; height: 118px"
+              src="../../../assets/{{ car.image }}"
+              alt="16C600"
+            />
+          </div>
+          <div class="col-9">
+            <p class="h2">{{ car.name }}</p>
+            <div class="row">
+              <div class="col-3">
+                <a
+                  ><i class="fa fa-steering-wheel"></i>
+                  <p class="h3">{{ car.type }}</p>
+                </a>
+              </div>
+              <!-- <div class="col" [ngIf]="car.ac"> -->
+              <div class="col-4">
+                <a
+                  ><i class="fa fa-air-conditioner"></i>
+                  <p class="h3">Air Conditioning</p>
+                </a>
+              </div>
+            </div>
+            <div>
+              <a
+                ><i class="fa fa-map-location"></i>
+                <p class="h3">
+                  City: <b>{{ car.city }}</b>
+                </p></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-3 right-style">
+      <p>Daily Rate</p>
+      <p>
+        usd <b>{{ car.rate }}</b>
+      </p>
+      <button type="button" class="btn button-details">Details</button>
+    </div>
+  </div>
+</div>
